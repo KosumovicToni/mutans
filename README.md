@@ -1,38 +1,68 @@
-# sv
+## 🚀 Getting Started
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+### Prerequisites
 
-## Creating a project
+Ensure you have the following installed:
 
-If you're seeing this, you've probably already done this step. Congrats!
+* **Node.js** (v18.0.0 or higher)
+* **npm**, **pnpm**, or **yarn**
 
-```sh
-# create a new project in the current directory
-npx sv create
+### Installation
 
-# create a new project in my-app
-npx sv create my-app
+1. **Clone the repository:**
+```bash
+git clone https://github.com/KosumovicToni/mutans.git
+cd mutans
+
 ```
 
-## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+2. **Install dependencies:**
+```bash
+npm install
+# or
+pnpm install
 
-```sh
+```
+
+### Development
+
+Start the development server:
+
+```bash
 npm run dev
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+## 🚢 Deployment
 
-To create a production version of your app:
+This project is configured to be deployed using `@sveltejs/adapter-static`.
 
-```sh
+To create a production-ready build:
+
+```bash
 npm run build
 ```
 
 You can preview the production build with `npm run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+
+
+## 🛠️ Project Structure
+
+```text
+mutans/
+├── src/
+│   ├── lib/          # Reusable components and logic
+│   ├── routes/       # File-based routing (pages & API)
+│   ├── app.d.ts      # TypeScript definitions
+│   └── app.html      # HTML entry point
+├── static/           # Static assets (images, fonts, etc.)
+├── svelte.config.js  # SvelteKit configuration
+└── vite.config.ts    # Vite configuration
+
+```
+
+## 📄 License
+
+Distributed under the **MIT License**. See `LICENSE` for more information.
