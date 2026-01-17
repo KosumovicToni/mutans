@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { page } from "$app/state";
-  import { slide } from "svelte/transition";
+  import Navlink from "./navbar/Navlink.svelte";
+  import Navlogo from "./navbar/Navlogo.svelte";
 
   type Item = {
     name: string;
@@ -11,6 +11,8 @@
     href: string;
   };
 
+  let display: boolean = $state(false);
+  let index = $state(0);
   const items: Item[] = [
     {
       name: "Team",
@@ -47,27 +49,12 @@
   ];
 
   const title = { name: "Mutans", href: "/" };
-
-  // Track the index of the open menu. null means all are closed.
-  let openIndex: number | null = null;
-
-  const toggleMenu = (index: number) => {
-    if (openIndex === index) {
-      openIndex = null; // Close if clicking the same button
-    } else {
-      openIndex = index; // Open the clicked one
-    }
-  };
-
-  const closeMenus = () => {
-    openIndex = null;
-  };
 </script>
 
 <svelte:window
   on:click={(e) => {
     if (!(e.target as Element).closest(".menu-container")) {
-      closeMenus();
+      display = false;
     }
   }}
 />
@@ -75,41 +62,11 @@
 <nav class="bg-white shadow-md">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-16 items-center">
-      <div class="flex-shrink-0">
-        <a href={title.href} class="text-2xl font-bold text-blue-600">
-          {title.name}
-        </a>
-      </div>
+      <Navlogo {title}></Navlogo>
 
-      <div class="flex space-x-4">
+      <div class="flex space-x-4 menu-container">
         {#each items as item, i}
-          <div class="relative menu-container">
-            <button
-              class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              on:click={() => toggleMenu(i)}
-              aria-expanded={openIndex === i}
-            >
-              {item.name}
-              {#if item.sub.length > 0}
-                <span class="ml-1 text-xs opacity-50">▼</span>
-              {/if}
-            </button>
-            {#if openIndex === i && item.sub.length > 0}
-              <div
-                transition:slide={{ duration: 200 }}
-                class="absolute left-0 mt-2 w-auto rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 z-50"
-              >
-                {#each item.sub as subItem}
-                  <a
-                    href={subItem.href}
-                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    {subItem.name}
-                  </a>
-                {/each}
-              </div>
-            {/if}
-          </div>
+          <Navlink bind:display bind:index {item} {i}></Navlink>
         {/each}
       </div>
     </div>
