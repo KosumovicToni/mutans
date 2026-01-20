@@ -2,7 +2,7 @@
   const repo: string = "https://github.com/KosumovicToni/mutans";
 </script>
 
-<div class="text-center p-4">
+<div class="text-center p-4 text-xs sm:text-sm md:text-md lg:text-lg">
   <p>
     © 2026 - Content on this site is licensed under a <span
       class="text-blue-600 font-bold"
