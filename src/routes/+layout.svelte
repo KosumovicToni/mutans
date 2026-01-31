@@ -28,7 +28,7 @@
     {
       name: "Team",
       sub: [
-        { name: "Members", href: "" },
+        { name: "Members", href: "team" },
         { name: "Attributions", href: "" },
       ],
     },
@@ -66,12 +66,14 @@
   <link rel="icon" href={favicon} />
 </svelte:head>
 
-<div class="flex flex-col min-h-screen">
-  {#if isMobile}
-    <MobileNavbar {items} {title}></MobileNavbar>
-  {:else}
-    <Navbar {items} {title}></Navbar>
-  {/if}
+<div class="flex flex-col relative min-h-screen">
+  <div class="w-screen fixed z-20">
+    {#if isMobile}
+      <MobileNavbar {items} {title}></MobileNavbar>
+    {:else}
+      <Navbar {items} {title}></Navbar>
+    {/if}
+  </div>
   {@render children()}
   <Footer></Footer>
 </div>

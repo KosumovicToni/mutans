@@ -22,6 +22,6 @@
     {/if}
   </button>
   {#if display && index == i && item.sub.length > 0}
-    <Dropdown sub={item.sub}></Dropdown>
+    <Dropdown bind:display sub={item.sub}></Dropdown>
   {/if}
 </div>

@@ -1,3 +1,4 @@
+<div class="h-16"></div>
 <div class="flex-1 p-4">
   <h1>Welcome to SvelteKit</h1>
   <p>

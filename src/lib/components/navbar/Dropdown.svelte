@@ -1,7 +1,6 @@
 <script lang="ts">
   import { slide } from "svelte/transition";
-  let propos = $props();
-  let sub = propos.sub;
+  let { sub, display = $bindable() } = $props();
 </script>
 
 <div
@@ -12,6 +11,7 @@
     <a
       href={subItem.href}
       class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+      onclick={() => (display = false)}
     >
       {subItem.name}
     </a>
