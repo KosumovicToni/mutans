@@ -17,7 +17,7 @@
     <h4 class="text-xl font-bold text-gray-800 tracking-tight">
       {member.name}
     </h4>
-    <p class="text-xs text-blue-600 font-black uppercase tracking-widest mt-1">
+    <p class="text-xs text-sky-600 font-black uppercase tracking-widest mt-1">
       {member.role}
     </p>
   </div>

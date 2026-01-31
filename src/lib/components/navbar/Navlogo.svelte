@@ -4,7 +4,7 @@
 </script>
 
 <div class="flex-shrink-0">
-  <a href={title.href} class="text-2xl font-bold text-blue-600">
+  <a href={title.href} class="text-2xl font-bold text-sky-700">
     {title.name}
   </a>
 </div>

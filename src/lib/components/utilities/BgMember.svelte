@@ -7,7 +7,7 @@
 
   <div class="relative z-10 text-left">
     <h1
-      class="text-5xl lg:text-8xl font-black text-white uppercase tracking-tighter"
+      class="text-5xl lg:text-8xl font-black text-white opacity-75 uppercase tracking-tighter"
     >
       Mutans <br /> <span class="text-blue-500">Team</span>
     </h1>
@@ -16,7 +16,7 @@
   <div class="relative z-10 text-right">
     <button
       aria-label="scroll-down"
-      class="button text-white bg-black opacity-25 rounded-full p-2 transaltion-all duration-500 hover:-translate-y-1 hover:opacity-50"
+      class="invisible lg:visible button text-white bg-black opacity-25 rounded-full p-2 transaltion-all duration-500 hover:-translate-y-1 hover:opacity-50 hover:text-blue-300"
     >
       <a aria-label="scroll-down" href="#member">
         <svg
