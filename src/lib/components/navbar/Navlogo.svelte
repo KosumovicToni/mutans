@@ -3,7 +3,10 @@
 </script>
 
 <div class="flex-shrink-0">
-  <a href={title.href} class="text-2xl font-bold text-sky-700">
+  <a
+    href={title.href}
+    class="text-2xl font-black text-slate-50 hover:text-space-accent transition-all glow-text-cyan tracking-tighter uppercase"
+  >
     {title.name}
   </a>
 </div>

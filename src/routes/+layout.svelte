@@ -2,6 +2,7 @@
   import favicon from "$lib/assets/favicon.svg";
   import "../app.css";
   import { onMount } from "svelte";
+  import { settings } from "$lib/settings.svelte";
 
   import Navbar from "$lib/components/Navbar.svelte";
   import Footer from "$lib/components/Footer.svelte";
@@ -12,6 +13,7 @@
   let isMobile = $state(false);
 
   onMount(() => {
+    settings.init();
     const mediaQuery = window.matchMedia("(max-width: 768px)");
 
     // Set the start value

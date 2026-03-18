@@ -1,1 +1,74 @@
 @import "tailwindcss";
+
+@theme {
+  --color-space-bg: #020617;
+  --color-space-card: rgba(255, 255, 255, 0.05);
+  --color-space-accent: var(--accent-color);
+  --color-space-nebula: var(--nebula-color);
+  --color-space-border: rgba(255, 255, 255, 0.1);
+  --shadow-glow: 0 0 15px var(--glow-color);
+}
+
+:root {
+  /* Default Theme (Space) */
+  --accent-color: #22d3ee;
+  --nebula-color: #a855f7;
+  --glow-color: rgba(34, 211, 238, 0.3);
+}
+
+[data-daltonism="protanopia"],
+[data-daltonism="deuteranopia"] {
+  --accent-color: #0072b2;
+  --nebula-color: #e69f00;
+  --glow-color: rgba(0, 114, 178, 0.3);
+}
+
+[data-daltonism="tritanopia"] {
+  --accent-color: #d55e00;
+  --nebula-color: #009e73;
+  --glow-color: rgba(213, 94, 0, 0.3);
+}
+
+@layer base {
+  body {
+    @apply bg-space-bg text-slate-50 min-h-screen relative;
+    background-image:
+      radial-gradient(
+        circle at 20% 30%,
+        color-mix(in srgb, var(--nebula-color) 15%, transparent) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 70%,
+        color-mix(in srgb, var(--accent-color) 15%, transparent) 0%,
+        transparent 50%
+      );
+    background-attachment: fixed;
+  }
+
+  body::before {
+    content: "";
+    @apply fixed inset-0 -z-10 opacity-30 pointer-events-none;
+    background-image: radial-gradient(white 1px, transparent 0);
+    background-size: 50px 50px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply tracking-tight font-bold;
+  }
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-xl;
+}
+
+.glow-cyan {
+  box-shadow: var(--shadow-glow);
+}
+
+.glow-text-cyan {
+  text-shadow: 0 0 10px color-mix(in srgb, var(--accent-color) 50%, transparent);
+}

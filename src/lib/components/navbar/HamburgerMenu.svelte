@@ -4,7 +4,6 @@
   let { items = [] } = $props();
 
   let display = $state(false);
-  // Usiamo una stringa per gestire l'apertura singola (più semplice e reattiva)
   let openSubMenu = $state<string | null>(null);
 
   const toggleMenu = () => {
@@ -13,7 +12,7 @@
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
-      openSubMenu = null; // Reset sottomenu quando chiudi tutto
+      openSubMenu = null;
     }
   };
 
@@ -23,7 +22,7 @@
 </script>
 
 <button
-  class="inline-flex items-center justify-center p-2 w-10 h-10 rounded-md transition-colors hover:bg-gray-100 focus:outline-none"
+  class="inline-flex items-center justify-center p-2 w-10 h-10 rounded-md transition-all text-slate-50 hover:bg-white/10 focus:outline-none border border-white/10"
   onclick={toggleMenu}
   aria-label="Toggle menu"
   aria-expanded={display}
@@ -35,7 +34,7 @@
     stroke-width="1.5"
     stroke="currentColor"
     class="size-6 transition-transform duration-300 {display
-      ? 'rotate-180'
+      ? 'rotate-180 text-space-accent'
       : ''}"
   >
     {#if !display}
@@ -57,24 +56,24 @@
 {#if display}
   <div
     transition:slide={{ duration: 300 }}
-    class="fixed top-16 left-0 w-full h-[calc(100vh-64px)] bg-white z-50 flex flex-col shadow-xl overflow-y-auto"
+    class="fixed top-16 left-0 w-full h-[calc(100vh-64px)] bg-space-bg/95 backdrop-blur-xl z-50 flex flex-col shadow-2xl overflow-y-auto border-t border-white/10"
   >
-    <nav class="flex flex-col p-4">
+    <nav class="flex flex-col p-6">
       {#each items as item}
         {@const hasSub = item.sub && item.sub.length > 0}
         {@const isOpen = openSubMenu === item.name}
 
-        <div class="flex flex-col border-b border-gray-50 last:border-0">
+        <div class="flex flex-col border-b border-white/5 last:border-0">
           {#if hasSub}
             <button
               onclick={() => toggleSubMenu(item.name)}
-              class="flex w-full items-center justify-between py-5 text-left text-xl font-medium text-gray-800 active:bg-gray-50 transition-colors px-2 rounded-lg"
+              class="flex w-full items-center justify-between py-6 text-left text-xl font-black uppercase tracking-tighter text-slate-50 active:bg-white/5 transition-all px-2 rounded-lg"
             >
-              <span>{item.name}</span>
+              <span class={isOpen ? "text-space-accent" : ""}>{item.name}</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="size-5 text-gray-400 transition-transform duration-300 {isOpen
-                  ? 'rotate-180'
+                class="size-5 text-slate-500 transition-transform duration-300 {isOpen
+                  ? 'rotate-180 text-space-accent'
                   : ''}"
                 viewBox="0 0 20 20"
                 fill="currentColor"
@@ -90,7 +89,7 @@
             <a
               href={item.href}
               onclick={toggleMenu}
-              class="py-5 text-xl font-medium text-gray-800 active:text-blue-600 px-2"
+              class="py-6 text-xl font-black uppercase tracking-tighter text-slate-50 active:text-space-accent px-2 transition-colors"
             >
               {item.name}
             </a>
@@ -99,13 +98,13 @@
           {#if hasSub && isOpen}
             <div
               transition:slide={{ duration: 300 }}
-              class="flex flex-col bg-gray-50 rounded-xl mb-4 overflow-hidden"
+              class="flex flex-col bg-white/5 rounded-2xl mb-6 overflow-hidden border border-white/10"
             >
               {#each item.sub as subItem}
                 <a
                   href={subItem.href}
                   onclick={toggleMenu}
-                  class="px-6 py-4 text-lg text-gray-600 border-b border-white last:border-0 active:bg-blue-50 active:text-blue-600"
+                  class="px-8 py-5 text-lg text-slate-400 border-b border-white/5 last:border-0 active:bg-space-accent/10 active:text-space-accent transition-all"
                 >
                   {subItem.name}
                 </a>
