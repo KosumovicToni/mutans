@@ -1,6 +1,5 @@
 <script lang="ts">
-  let propos = $props();
-  let title = propos.title;
+  let { title } = $props();
 </script>
 
 <div class="flex-shrink-0">

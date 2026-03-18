@@ -28,35 +28,35 @@
     {
       name: "Team",
       sub: [
-        { name: "Members", href: "team" },
-        { name: "Attributions", href: "" },
+        { name: "Members", href: "/team" },
+        { name: "Attributions", href: "#" },
       ],
     },
     {
       name: "Project",
       sub: [
-        { name: "Description", href: "" },
-        { name: "Engineering", href: "" },
-        { name: "Results", href: "" },
-        { name: "Contribution", href: "" },
+        { name: "Description", href: "#" },
+        { name: "Engineering", href: "#" },
+        { name: "Results", href: "#" },
+        { name: "Contribution", href: "#" },
       ],
     },
     {
       name: "Dry Lab",
       sub: [
-        { name: "Protocols", href: "" },
-        { name: "Measurement", href: "" },
-        { name: "Safety and Security", href: "" },
+        { name: "Protocols", href: "#" },
+        { name: "Measurement", href: "#" },
+        { name: "Safety and Security", href: "#" },
       ],
     },
     {
       name: "Wet Lab",
       sub: [
-        { name: "Model", href: "" },
-        { name: "Software", href: "" },
+        { name: "Model", href: "#" },
+        { name: "Software", href: "#" },
       ],
     },
-    { name: "Engagement", href: "palle", sub: [] },
+    { name: "Engagement", href: "#", sub: [] },
   ];
 
   const title = { name: "Mutans", href: "/" };

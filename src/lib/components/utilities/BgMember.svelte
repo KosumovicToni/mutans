@@ -1,5 +1,5 @@
 <div
-  class="relative h-142 lg:h-screen w-full bg-team bg-cover bg-center flex items-end p-8 grid grid-cols-2 justify-items-between md:p-16"
+  class="relative h-[60vh] lg:h-screen w-full bg-team bg-cover bg-center flex items-end justify-between p-8 md:p-16"
 >
   <div
     class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"
@@ -16,7 +16,7 @@
   <div class="relative z-10 text-right">
     <button
       aria-label="scroll-down"
-      class="invisible lg:visible button text-white bg-black opacity-25 rounded-full p-2 transaltion-all duration-500 hover:-translate-y-1 hover:opacity-50 hover:text-blue-300"
+      class="hidden lg:flex button text-white bg-black/25 rounded-full p-2 transition-all duration-500 hover:-translate-y-1 hover:bg-black/50 hover:text-blue-300 items-center justify-center"
     >
       <a aria-label="scroll-down" href="#member">
         <svg

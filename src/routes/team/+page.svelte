@@ -1,5 +1,5 @@
 <script lang="ts">
-  import MemberCrad from "$lib/components/MemberCrad.svelte";
+  import MemberCard from "$lib/components/MemberCard.svelte";
   import BgMember from "$lib/components/utilities/BgMember.svelte";
 
   const members = [
@@ -28,10 +28,10 @@
 <div class="mx-auto p-6 py-20">
   <div
     id="member"
-    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center place-item-center"
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center place-items-center"
   >
     {#each members as member}
-      <MemberCrad {member}></MemberCrad>
+      <MemberCard {member}></MemberCard>
     {/each}
   </div>
   <div class="w-full text-center text-4xl">
@@ -41,7 +41,7 @@
     class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center"
   >
     {#each pis as pi}
-      <MemberCrad member={pi}></MemberCrad>
+      <MemberCard member={pi}></MemberCard>
     {/each}
   </div>
 </div>
