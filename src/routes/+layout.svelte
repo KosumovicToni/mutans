@@ -61,7 +61,7 @@
     { name: "Engagement", href: "#", sub: [] },
   ];
 
-  const title = { name: "Mutans", href: "/" };
+  const title = { name: "COSMIC", href: "/" };
 </script>
 
 <svelte:head>

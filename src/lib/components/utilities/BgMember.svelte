@@ -11,9 +11,9 @@
     <h1
       class="text-6xl lg:text-9xl font-black text-white uppercase tracking-tighter leading-none"
     >
-      Mutans <br />
+      Cosmic <br />
       <span
-        class="text-transparent bg-clip-text bg-gradient-to-r from-space-accent to-space-nebula animate-pulse"
+        class="text-transparent bg-clip-text bg-gradient-to-r from-space-accent to-space-nebula"
       >
         Team
       </span>

@@ -19,7 +19,7 @@
         <h3
           class="text-2xl font-black tracking-tighter glow-text-cyan uppercase"
         >
-          Mutans Project
+          COSMIC Project
         </h3>
         <p class="text-slate-400 max-w-sm text-sm leading-relaxed">
           Advancing synthetic biology through innovation and cosmic-scale

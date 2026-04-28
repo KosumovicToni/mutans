@@ -11,11 +11,11 @@
     style="animation-delay: 2s;"
   ></div>
 
-  <div class="relative z-10">
+  <div class="relative flex flex-col items-center z-10">
     <h1
       class="text-7xl md:text-9xl font-black text-white mb-6 tracking-tighter uppercase leading-none"
     >
-      MUTANS
+      COSMIC
     </h1>
     <p
       class="text-xl md:text-2xl text-slate-400 max-w-2xl mb-16 font-light tracking-wide"
@@ -53,7 +53,7 @@
           Project
         </h2>
         <p class="text-slate-400 leading-relaxed">
-          Discover our cosmic mission and the engineering behind Mutans.
+          Discover our cosmic mission and the engineering behind COSMIC.
         </p>
       </div>
 
